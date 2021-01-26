@@ -1,7 +1,6 @@
 <html>
 <head>
 <link rel="manifest" id="my-manifest" />
-<link rel="manifest" href="manifest.webmanifest" />
 <script>
       window.addEventListener('load', function() {
         if ('serviceWorker' in navigator) {
@@ -99,8 +98,6 @@ var setAppName = function() {
     document.querySelector('#my-manifest').setAttribute('href', manifestURL);
 }
 
-</script>
-<script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.6/pwacompat.min.js" integrity="sha384-GOaSLecPIMCJksN83HLuYf9FToOiQ2Df0+0ntv7ey8zjUHESXhthwvq9hXAZTifA" crossorigin="anonymous">
 </script>
 </head>
 <body>
