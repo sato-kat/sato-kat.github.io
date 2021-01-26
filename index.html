@@ -2,17 +2,6 @@
 <head>
 <link rel="manifest" id="my-manifest" />
 <script>
-      window.addEventListener('load', function() {
-        if ('serviceWorker' in navigator) {
-          navigator.serviceWorker.register("/serviceWorker.js")
-            .then(function(registration) {
-              console.log("serviceWorker registed.");
-            }).catch(function(error) {
-              console.warn("serviceWorker error.", error);
-            });
-        }
-      });
-
 var setAppName = function() {
     var appName = document.getElementById("textbox").value;
 
@@ -96,6 +85,19 @@ var setAppName = function() {
     const blob = new Blob([stringManifest], {type: 'application/json'});
     const manifestURL = URL.createObjectURL(blob);
     document.querySelector('#my-manifest').setAttribute('href', manifestURL);
+      
+      window.addEventListener('load', function() {
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register("/serviceWorker.js")
+            .then(function(registration) {
+              console.log("serviceWorker registed.");
+            }).catch(function(error) {
+              console.warn("serviceWorker error.", error);
+            });
+        }
+      });
+      
+      
 }
 
 </script>
